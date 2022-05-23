@@ -43,6 +43,22 @@ const SetupForm = () => {
             </select>
         </div>
 
+        {/* Question Type */}
+
+        <div className='form-control'>
+          <label htmlFor='questionType'>Select Type</label>
+          <select
+            name='questionType'
+            id='questionType'
+            className='form-input'
+            value={quiz.questionType}
+            onChange={handleChange}
+            >
+              <option value='multipleChoice'>Multiple Choice</option>
+              <option value='boolean'>True / False</option>
+            </select>
+        </div>
+
         {/* Difficulty */}
 
         <div className='form-control'>
@@ -61,7 +77,7 @@ const SetupForm = () => {
         </div>
 
         {error && <p className='error'>
-          can't generate questions, please try diffeent options</p>
+          can't generate questions, please try different options</p>
         }
         <button type='submit'
           onClick={handleSubmit}

@@ -25,7 +25,8 @@ const AppProvider = ({ children }) => {
   const [quiz, setQuiz] = useState({
     amount: 10,
     category: 'sports',
-    difficulty: 'easy'
+    difficulty: 'easy',
+    questionType: 'multiple'
   })
 
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -89,9 +90,9 @@ const AppProvider = ({ children }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const {amount, category, difficulty} = quiz
+    const {amount, category, difficulty, questionType} = quiz
 
-    const url = `${API_ENDPOINT}amount=${amount}&category=${table[category]}&difficulty=${difficulty}&type=multiple`
+    const url = `${API_ENDPOINT}amount=${amount}&category=${table[category]}&difficulty=${difficulty}&type=${questionType}`
     fetchQuestions(url)
   }
 
