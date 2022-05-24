@@ -9,6 +9,8 @@ const Modal = () => {
     questions
   } = useGlobalContext()
 
+  const score = ((correct/questions.length)* 100).toFixed(0)
+
 
   return (
     <div
@@ -17,8 +19,8 @@ const Modal = () => {
       }`}
     >
       <div className='modal-content'>
-        <h2>Congrats!</h2>
-        <p>You answered {((correct/questions.length)* 100).toFixed(0)}% of questions correctly</p>
+        <h2>{ score > 50 ? `Congrats!` : `Oops!`}</h2>
+        <p>You answered {score}% of questions correctly</p>
         <button
           className='close-btn'
           onClick={closeModal}

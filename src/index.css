@@ -309,3 +309,9 @@ Loading
 .close-btn {
   margin-right: auto;
 }
+
+.span {
+  text-align: center;
+  margin-top: 16px;
+  display: block;
+}

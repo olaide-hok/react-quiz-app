@@ -2,12 +2,13 @@ import React from 'react'
 import { useGlobalContext } from './context'
 
 const SetupForm = () => {
+  const getYear = new Date().getFullYear()
   const {quiz, error, handleChange, handleSubmit } = useGlobalContext()
   return (
     <main>
       <section className='quiz quiz-small'>
         <form className='setup-form'>
-          <h2>setup quiz</h2>
+          <h2>Zenith Trivias</h2>
         <div className='form-control'>
           <label htmlFor='amount'>
             number of questions
@@ -83,6 +84,7 @@ const SetupForm = () => {
           onClick={handleSubmit}
           className='submit-btn'>start</button>
         </form>
+        <span className='span'> &copy;Zenith Trivias {getYear} All Rights Reserved.</span>
       </section>
     </main>
   )

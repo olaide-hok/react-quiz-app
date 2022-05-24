@@ -5,6 +5,8 @@ import SetupForm from './SetupForm'
 import Loading from './Loading'
 import Modal from './Modal'
 function App() {
+  const getYear = new Date().getFullYear()
+
   const {
     waiting,
     loading, 
@@ -58,6 +60,9 @@ function App() {
       <button 
         onClick={nextQuestion}
         className='next-question'>next question</button>
+
+    <span className='span'> &copy;Zenith Trivias {getYear} All Rights Reserved.</span>
+
     </section>
   </main>
 }
